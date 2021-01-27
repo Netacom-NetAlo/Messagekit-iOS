@@ -45,4 +45,7 @@ public enum AccessoryPosition {
     
     /// Aligns the `AccessoryView`'s bottom edge to the cell's bottom edge.
     case cellBottom
+    
+    /// Aligns the `AccessoryView`'s bottom edge to the cell's center left edge.
+    case messageCenterLeft
 }
