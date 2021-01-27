@@ -204,6 +204,9 @@ open class MessageContentCell: MessageCollectionViewCell {
         switch attributes.avatarPosition.horizontal {
         case .cellLeading:
             origin.x = padding
+            if case .messageCenterLeft = attributes.accessoryViewPosition {
+                origin.x += (attributes.accessoryViewSize.width + attributes.accessoryViewPadding.horizontal)
+            }
         case .cellTrailing:
             origin.x = attributes.frame.width - attributes.avatarSize.width - padding
         case .natural:
@@ -256,6 +259,9 @@ open class MessageContentCell: MessageCollectionViewCell {
         switch attributes.avatarPosition.horizontal {
         case .cellLeading:
             origin.x = attributes.avatarSize.width + attributes.messageContainerPadding.left + avatarPadding
+            if case .messageCenterLeft = attributes.accessoryViewPosition {
+                origin.x += (attributes.accessoryViewSize.width + attributes.accessoryViewPadding.horizontal)
+            }
         case .cellTrailing:
             origin.x = attributes.frame.width - attributes.avatarSize.width - attributes.messageContainerSize.width - attributes.messageContainerPadding.right - avatarPadding
         case .natural:
@@ -316,6 +322,16 @@ open class MessageContentCell: MessageCollectionViewCell {
         
         var origin: CGPoint = .zero
         
+        // Accessory view is always on the opposite side of avatar
+        switch attributes.avatarPosition.horizontal {
+        case .cellLeading:
+            origin.x = messageContainerView.frame.maxX + attributes.accessoryViewPadding.left
+        case .cellTrailing:
+            origin.x = messageContainerView.frame.minX - attributes.accessoryViewPadding.right - attributes.accessoryViewSize.width
+        case .natural:
+            fatalError(MessageKitError.avatarPositionUnresolved)
+        }
+        
         // Accessory view is set at the side space of the messageContainerView
         switch attributes.accessoryViewPosition {
         case .messageLabelTop:
@@ -328,20 +344,13 @@ open class MessageContentCell: MessageCollectionViewCell {
             origin.y = messageContainerView.frame.midY - (attributes.accessoryViewSize.height / 2)
         case .cellBottom:
             origin.y = attributes.frame.height - attributes.accessoryViewSize.height
+        case .messageCenterLeft:
+            origin.x = attributes.accessoryViewPadding.left
+            origin.y = messageContainerView.frame.midY - (attributes.accessoryViewSize.height / 2)
         default:
             break
         }
-
-        // Accessory view is always on the opposite side of avatar
-        switch attributes.avatarPosition.horizontal {
-        case .cellLeading:
-            origin.x = messageContainerView.frame.maxX + attributes.accessoryViewPadding.left
-        case .cellTrailing:
-            origin.x = messageContainerView.frame.minX - attributes.accessoryViewPadding.right - attributes.accessoryViewSize.width
-        case .natural:
-            fatalError(MessageKitError.avatarPositionUnresolved)
-        }
-
+        
         accessoryView.frame = CGRect(origin: origin, size: attributes.accessoryViewSize)
     }
 }
