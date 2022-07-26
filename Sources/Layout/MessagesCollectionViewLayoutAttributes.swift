@@ -54,6 +54,8 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
     public var accessoryViewPadding: HorizontalEdgeInsets = .zero
     public var accessoryViewPosition: AccessoryPosition = .messageCenter
     
+    public var reactionContainerSize: CGSize = .zero
+    
     // MARK: - Methods
 
     open override func copy(with zone: NSZone? = nil) -> Any {
@@ -77,6 +79,7 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
         copy.accessoryViewSize = accessoryViewSize
         copy.accessoryViewPadding = accessoryViewPadding
         copy.accessoryViewPosition = accessoryViewPosition
+        copy.reactionContainerSize = reactionContainerSize
         return copy
         // swiftlint:enable force_cast
     }
@@ -102,6 +105,7 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
                 && attributes.accessoryViewSize == accessoryViewSize
                 && attributes.accessoryViewPadding == accessoryViewPadding
                 && attributes.accessoryViewPosition == accessoryViewPosition
+                && attributes.reactionContainerSize == reactionContainerSize
         } else {
             return false
         }

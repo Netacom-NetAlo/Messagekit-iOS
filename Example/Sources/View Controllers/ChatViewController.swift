@@ -186,6 +186,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
 // MARK: - MessageCellDelegate
 
 extension ChatViewController: MessageCellDelegate {
+    func didTapReactions(in cell: MessageCollectionViewCell) {
+        
+    }
+    
     
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("Avatar tapped")
@@ -261,6 +265,10 @@ extension ChatViewController: MessageCellDelegate {
 // MARK: - MessageLabelDelegate
 
 extension ChatViewController: MessageLabelDelegate {
+    func didSelectMention(_ mention: String, index: Int, fullText: String) {
+        
+    }
+    
     
     func didSelectAddress(_ addressComponents: [String: String]) {
         print("Address Selected: \(addressComponents)")

@@ -282,6 +282,10 @@ extension AutocompleteExampleViewController: AutocompleteManagerDelegate, Autoco
 // MARK: - MessagesDisplayDelegate
 
 extension AutocompleteExampleViewController: MessagesDisplayDelegate {
+    func configureReactionsView(_ reactionView: UIView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        
+    }
+    
 
     // MARK: - Text Messages
 

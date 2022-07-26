@@ -37,6 +37,31 @@ final class BasicExampleViewController: ChatViewController {
 // MARK: - MessagesDisplayDelegate
 
 extension BasicExampleViewController: MessagesDisplayDelegate {
+    func configureReactionsView(_ reactionView: UIView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        let stackview = UIStackView(frame: .zero)
+        stackview.alignment = .center
+        stackview.distribution = .equalSpacing
+        stackview.axis = .horizontal
+        stackview.translatesAutoresizingMaskIntoConstraints = false
+        reactionView.addSubview(stackview)
+        
+        let lbLove = UILabel(frame: CGRect.zero)
+        lbLove.text = "love 1"
+        
+        let lbWow = UILabel(frame: CGRect.zero)
+        lbWow.text = "wow 19"
+        
+        stackview.addArrangedSubview(lbLove)
+        stackview.addArrangedSubview(lbWow)
+        
+        NSLayoutConstraint.activate([
+            stackview.topAnchor.constraint(equalTo: reactionView.topAnchor),
+            stackview.leftAnchor.constraint(equalTo: reactionView.leftAnchor),
+            stackview.bottomAnchor.constraint(equalTo: reactionView.bottomAnchor),
+            stackview.rightAnchor.constraint(equalTo: reactionView.rightAnchor),
+        ])
+    }
+    
     
     // MARK: - Text Messages
     
@@ -128,4 +153,7 @@ extension BasicExampleViewController: MessagesLayoutDelegate {
         return 16
     }
     
+    func messageReactionHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 0
+    }
 }
