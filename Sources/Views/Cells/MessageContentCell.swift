@@ -236,7 +236,8 @@ open class MessageContentCell: MessageCollectionViewCell {
         case .messageCenter: // Needs messageContainerView frame to be set
             origin.y = messageContainerView.frame.midY - (attributes.avatarSize.height/2)
         case .cellBottom:
-            origin.y = attributes.frame.height - attributes.avatarSize.height
+            origin.y = messageContainerView.frame.maxY - attributes.avatarSize.height
+//            origin.y = attributes.frame.height - attributes.avatarSize.height
         default:
             break
         }
