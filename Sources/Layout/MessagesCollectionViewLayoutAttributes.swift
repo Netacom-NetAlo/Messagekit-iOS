@@ -55,6 +55,7 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
     public var accessoryViewPosition: AccessoryPosition = .messageCenter
     
     public var reactionContainerSize: CGSize = .zero
+    public var reactionContainerPadding: UIEdgeInsets = .zero
     
     // MARK: - Methods
 
@@ -80,6 +81,7 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
         copy.accessoryViewPadding = accessoryViewPadding
         copy.accessoryViewPosition = accessoryViewPosition
         copy.reactionContainerSize = reactionContainerSize
+        copy.reactionContainerPadding = reactionContainerPadding
         return copy
         // swiftlint:enable force_cast
     }
@@ -106,6 +108,7 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
                 && attributes.accessoryViewPadding == accessoryViewPadding
                 && attributes.accessoryViewPosition == accessoryViewPosition
                 && attributes.reactionContainerSize == reactionContainerSize
+                && attributes.reactionContainerPadding == reactionContainerPadding
         } else {
             return false
         }

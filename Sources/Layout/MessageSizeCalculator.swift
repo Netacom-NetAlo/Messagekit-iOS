@@ -39,7 +39,10 @@ open class MessageSizeCalculator: CellSizeCalculator {
     public var outgoingAvatarPosition = AvatarPosition(vertical: .cellBottom)
 
     public var avatarLeadingTrailingPadding: CGFloat = 0
-
+    
+    public var incomingReactioinsPadding = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 30)
+    public var outgoingReactionsPadding = UIEdgeInsets(top: 4, left: 30, bottom: 4, right: 4)
+    
     public var incomingMessagePadding = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 30)
     public var outgoingMessagePadding = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 4)
 
@@ -78,6 +81,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
         attributes.messageContainerPadding = messageContainerPadding(for: message)
         attributes.messageContainerSize = messageContainerSize(for: message)
         
+        attributes.reactionContainerPadding = reactionsContainerPadding(for: message)
         attributes.reactionContainerSize = reactionContainerSize(for: message, at: indexPath)
         
         attributes.cellTopLabelSize = cellTopLabelSize(for: message, at: indexPath)
@@ -106,6 +110,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
 
         let messageContainerHeight = messageContainerSize(for: message).height
         let reactionContainerHeight = reactionContainerSize(for: message, at: indexPath).height
+        let reactionsVerticalPadding = reactionsContainerPadding(for: message).vertical
         let cellBottomLabelHeight = cellBottomLabelSize(for: message, at: indexPath).height
         let messageBottomLabelHeight = messageBottomLabelSize(for: message, at: indexPath).height
         let cellTopLabelHeight = cellTopLabelSize(for: message, at: indexPath).height
@@ -118,32 +123,32 @@ open class MessageSizeCalculator: CellSizeCalculator {
         switch avatarVerticalPosition {
         case .messageCenter:
             let totalLabelHeight: CGFloat = cellTopLabelHeight + messageTopLabelHeight
-                + messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight
+                + messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight + reactionsVerticalPadding
             let cellHeight = max(avatarHeight, totalLabelHeight)
             return max(cellHeight, accessoryViewHeight)
         case .messageBottom:
             var cellHeight: CGFloat = 0
             cellHeight += messageBottomLabelHeight
             cellHeight += cellBottomLabelHeight
-            let labelsHeight = messageContainerHeight + messageVerticalPadding + cellTopLabelHeight + messageTopLabelHeight + reactionContainerHeight
+            let labelsHeight = messageContainerHeight + messageVerticalPadding + cellTopLabelHeight + messageTopLabelHeight + reactionContainerHeight + reactionsVerticalPadding
             cellHeight += max(labelsHeight, avatarHeight)
             return max(cellHeight, accessoryViewHeight)
         case .messageTop:
             var cellHeight: CGFloat = 0
             cellHeight += cellTopLabelHeight
             cellHeight += messageTopLabelHeight
-            let labelsHeight = messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight
+            let labelsHeight = messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight + reactionsVerticalPadding
             cellHeight += max(labelsHeight, avatarHeight)
             return max(cellHeight, accessoryViewHeight)
         case .messageLabelTop:
             var cellHeight: CGFloat = 0
             cellHeight += cellTopLabelHeight
-            let messageLabelsHeight = messageContainerHeight + messageBottomLabelHeight + messageVerticalPadding + messageTopLabelHeight + cellBottomLabelHeight + reactionContainerHeight
+            let messageLabelsHeight = messageContainerHeight + messageBottomLabelHeight + messageVerticalPadding + messageTopLabelHeight + cellBottomLabelHeight + reactionContainerHeight + reactionsVerticalPadding
             cellHeight += max(messageLabelsHeight, avatarHeight)
             return max(cellHeight, accessoryViewHeight)
         case .cellTop, .cellBottom:
             let totalLabelHeight: CGFloat = cellTopLabelHeight + messageTopLabelHeight
-                + messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight
+                + messageContainerHeight + messageVerticalPadding + messageBottomLabelHeight + cellBottomLabelHeight + reactionContainerHeight + reactionsVerticalPadding
             let cellHeight = max(avatarHeight, totalLabelHeight)
             return max(cellHeight, accessoryViewHeight)
         }
@@ -264,13 +269,6 @@ open class MessageSizeCalculator: CellSizeCalculator {
         return .zero
     }
     
-    open func reactionContainerSize(for message: MessageType, at indexPath: IndexPath) -> CGSize {
-        let layoutDelegate = messagesLayout.messagesLayoutDelegate
-        let collectionView = messagesLayout.messagesCollectionView
-        let height = layoutDelegate.messageReactionHeight(for: message, at: indexPath, in: collectionView)
-        return CGSize(width: messagesLayout.itemWidth, height: height)
-    }
-
     open func messageContainerMaxWidth(for message: MessageType) -> CGFloat {
         let avatarWidth = avatarSize(for: message).width
         let messagePadding = messageContainerPadding(for: message)
@@ -279,6 +277,21 @@ open class MessageSizeCalculator: CellSizeCalculator {
         return messagesLayout.itemWidth - avatarWidth - messagePadding.horizontal - accessoryWidth - accessoryPadding.horizontal - avatarLeadingTrailingPadding
     }
 
+    // MARK: - Reactions
+    
+    open func reactionContainerSize(for message: MessageType, at indexPath: IndexPath) -> CGSize {
+        let layoutDelegate = messagesLayout.messagesLayoutDelegate
+        let collectionView = messagesLayout.messagesCollectionView
+        let height = layoutDelegate.messageReactionHeight(for: message, at: indexPath, in: collectionView)
+        return CGSize(width: messagesLayout.itemWidth, height: height)
+    }
+    
+    open func reactionsContainerPadding(for message: MessageType) -> UIEdgeInsets {
+        let dataSource = messagesLayout.messagesDataSource
+        let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
+        return isFromCurrentSender ? outgoingReactionsPadding : incomingReactioinsPadding
+    }
+    
     // MARK: - Helpers
 
     public var messagesLayout: MessagesCollectionViewFlowLayout {

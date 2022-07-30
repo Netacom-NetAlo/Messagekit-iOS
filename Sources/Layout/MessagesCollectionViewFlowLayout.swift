@@ -242,6 +242,16 @@ open class MessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
         messageSizeCalculators().forEach { $0.outgoingMessagePadding = newPadding }
     }
     
+    /// Set `incomingReactioinsPadding` of all `MessageSizeCalculator`s
+    public func setReactionsIncomingPadding(_ newPadding: UIEdgeInsets) {
+        messageSizeCalculators().forEach { $0.incomingReactioinsPadding = newPadding }
+    }
+    
+    /// Set `outgoingReactionsPadding` of all `MessageSizeCalculator`s
+    public func setReactionsOutgoingPadding(_ newPadding: UIEdgeInsets) {
+        messageSizeCalculators().forEach { $0.outgoingReactionsPadding = newPadding }
+    }
+    
     /// Set `incomingCellTopLabelAlignment` of all `MessageSizeCalculator`s
     public func setMessageIncomingCellTopLabelAlignment(_ newAlignment: LabelAlignment) {
         messageSizeCalculators().forEach { $0.incomingCellTopLabelAlignment = newAlignment }
