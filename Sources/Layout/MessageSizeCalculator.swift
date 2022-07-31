@@ -282,7 +282,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
     open func reactionContainerSize(for message: MessageType, at indexPath: IndexPath) -> CGSize {
         let layoutDelegate = messagesLayout.messagesLayoutDelegate
         let collectionView = messagesLayout.messagesCollectionView
-        let height = layoutDelegate.messageReactionHeight(for: message, at: indexPath, in: collectionView)
+        let height = layoutDelegate.messageReactionHeight(for: message, at: indexPath, in: collectionView, with: messagesLayout.itemWidth)
         return CGSize(width: messagesLayout.itemWidth, height: height)
     }
     
