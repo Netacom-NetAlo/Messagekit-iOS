@@ -238,7 +238,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
 
     // MARK: - Accessory View
 
-    public func accessoryViewSize(for message: MessageType) -> CGSize {
+    open func accessoryViewSize(for message: MessageType) -> CGSize {
         let dataSource = messagesLayout.messagesDataSource
         let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
         return isFromCurrentSender ? outgoingAccessoryViewSize : incomingAccessoryViewSize
@@ -282,7 +282,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
     open func reactionContainerSize(for message: MessageType, at indexPath: IndexPath) -> CGSize {
         let layoutDelegate = messagesLayout.messagesLayoutDelegate
         let collectionView = messagesLayout.messagesCollectionView
-        let height = layoutDelegate.messageReactionHeight(for: message, at: indexPath, in: collectionView, with: messagesLayout.itemWidth)
+        let height = layoutDelegate.messageReactionsViewHeight(for: message, at: indexPath, in: collectionView, with: messagesLayout.itemWidth)
         return CGSize(width: messagesLayout.itemWidth, height: height)
     }
     

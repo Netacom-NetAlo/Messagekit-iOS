@@ -121,7 +121,7 @@ public protocol MessagesLayoutDelegate: AnyObject {
     ///
     /// - Note:
     ///   The default value returned by this method is zero.
-    func messageReactionHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat
+    func messageReactionsViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat
     
     /// Custom cell size calculator for messages with MessageType.custom.
     ///
@@ -169,7 +169,7 @@ public extension MessagesLayoutDelegate {
         return 0
     }
     
-    func messageReactionHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat {
+    func messageReactionsViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat {
         return 0
     }
     

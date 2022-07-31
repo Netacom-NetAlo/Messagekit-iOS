@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -95,7 +95,6 @@
 		B7A03F731F866A06006AEF79 /* MessageKit+Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03F701F866A06006AEF79 /* MessageKit+Availability.swift */; };
 		B7A03F751F866A06006AEF79 /* MessageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A03F721F866A06006AEF79 /* MessageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7A03F7B1F866B85006AEF79 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03F7A1F866B85006AEF79 /* MessageCollectionViewCell.swift */; };
-		EFE1E87324BEFFAF005AE241 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E85C24BEFFAF005AE241 /* SwipeTableViewCellDelegate.swift */; };
 		EFE1E87424BEFFAF005AE241 /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E85D24BEFFAF005AE241 /* SwipeAnimator.swift */; };
 		EFE1E87524BEFFAF005AE241 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E85E24BEFFAF005AE241 /* SwipeCollectionViewCell+Display.swift */; };
 		EFE1E87624BEFFAF005AE241 /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E85F24BEFFAF005AE241 /* Swipeable.swift */; };
@@ -108,16 +107,13 @@
 		EFE1E87D24BEFFAF005AE241 /* SwipeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86624BEFFAF005AE241 /* SwipeFeedback.swift */; };
 		EFE1E87E24BEFFAF005AE241 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86724BEFFAF005AE241 /* SwipeActionTransitioning.swift */; };
 		EFE1E87F24BEFFAF005AE241 /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86824BEFFAF005AE241 /* SwipeCollectionViewCellDelegate.swift */; };
-		EFE1E88024BEFFAF005AE241 /* SwipeTableViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86924BEFFAF005AE241 /* SwipeTableViewCell+Display.swift */; };
 		EFE1E88124BEFFAF005AE241 /* SwipeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86A24BEFFAF005AE241 /* SwipeOptions.swift */; };
 		EFE1E88224BEFFAF005AE241 /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86B24BEFFAF005AE241 /* SwipeCollectionViewCell+Accessibility.swift */; };
 		EFE1E88324BEFFAF005AE241 /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86C24BEFFAF005AE241 /* SwipeCollectionViewCell.swift */; };
-		EFE1E88424BEFFAF005AE241 /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86D24BEFFAF005AE241 /* SwipeTableViewCell+Accessibility.swift */; };
 		EFE1E88524BEFFAF005AE241 /* SwipeExpansionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86E24BEFFAF005AE241 /* SwipeExpansionStyle.swift */; };
 		EFE1E88624BEFFAF005AE241 /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E86F24BEFFAF005AE241 /* SwipeExpanding.swift */; };
 		EFE1E88724BEFFAF005AE241 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E87024BEFFAF005AE241 /* SwipeActionsView.swift */; };
 		EFE1E88824BEFFAF005AE241 /* SwipeCellKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE1E87124BEFFAF005AE241 /* SwipeCellKit.h */; };
-		EFE1E88924BEFFAF005AE241 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1E87224BEFFAF005AE241 /* SwipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +232,6 @@
 		B7A03F711F866A06006AEF79 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7A03F721F866A06006AEF79 /* MessageKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageKit.h; sourceTree = "<group>"; };
 		B7A03F7A1F866B85006AEF79 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
-		EFE1E85C24BEFFAF005AE241 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		EFE1E85D24BEFFAF005AE241 /* SwipeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAnimator.swift; sourceTree = "<group>"; };
 		EFE1E85E24BEFFAF005AE241 /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
 		EFE1E85F24BEFFAF005AE241 /* Swipeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swipeable.swift; sourceTree = "<group>"; };
@@ -249,16 +244,13 @@
 		EFE1E86624BEFFAF005AE241 /* SwipeFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeFeedback.swift; sourceTree = "<group>"; };
 		EFE1E86724BEFFAF005AE241 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionTransitioning.swift; sourceTree = "<group>"; };
 		EFE1E86824BEFFAF005AE241 /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
-		EFE1E86924BEFFAF005AE241 /* SwipeTableViewCell+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeTableViewCell+Display.swift"; sourceTree = "<group>"; };
 		EFE1E86A24BEFFAF005AE241 /* SwipeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptions.swift; sourceTree = "<group>"; };
 		EFE1E86B24BEFFAF005AE241 /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
 		EFE1E86C24BEFFAF005AE241 /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
-		EFE1E86D24BEFFAF005AE241 /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
 		EFE1E86E24BEFFAF005AE241 /* SwipeExpansionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeExpansionStyle.swift; sourceTree = "<group>"; };
 		EFE1E86F24BEFFAF005AE241 /* SwipeExpanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeExpanding.swift; sourceTree = "<group>"; };
 		EFE1E87024BEFFAF005AE241 /* SwipeActionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionsView.swift; sourceTree = "<group>"; };
 		EFE1E87124BEFFAF005AE241 /* SwipeCellKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeCellKit.h; sourceTree = "<group>"; };
-		EFE1E87224BEFFAF005AE241 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,7 +546,6 @@
 		EFE1E85B24BEFFAF005AE241 /* SwipeCell */ = {
 			isa = PBXGroup;
 			children = (
-				EFE1E85C24BEFFAF005AE241 /* SwipeTableViewCellDelegate.swift */,
 				EFE1E85D24BEFFAF005AE241 /* SwipeAnimator.swift */,
 				EFE1E85E24BEFFAF005AE241 /* SwipeCollectionViewCell+Display.swift */,
 				EFE1E85F24BEFFAF005AE241 /* Swipeable.swift */,
@@ -567,16 +558,13 @@
 				EFE1E86624BEFFAF005AE241 /* SwipeFeedback.swift */,
 				EFE1E86724BEFFAF005AE241 /* SwipeActionTransitioning.swift */,
 				EFE1E86824BEFFAF005AE241 /* SwipeCollectionViewCellDelegate.swift */,
-				EFE1E86924BEFFAF005AE241 /* SwipeTableViewCell+Display.swift */,
 				EFE1E86A24BEFFAF005AE241 /* SwipeOptions.swift */,
 				EFE1E86B24BEFFAF005AE241 /* SwipeCollectionViewCell+Accessibility.swift */,
 				EFE1E86C24BEFFAF005AE241 /* SwipeCollectionViewCell.swift */,
-				EFE1E86D24BEFFAF005AE241 /* SwipeTableViewCell+Accessibility.swift */,
 				EFE1E86E24BEFFAF005AE241 /* SwipeExpansionStyle.swift */,
 				EFE1E86F24BEFFAF005AE241 /* SwipeExpanding.swift */,
 				EFE1E87024BEFFAF005AE241 /* SwipeActionsView.swift */,
 				EFE1E87124BEFFAF005AE241 /* SwipeCellKit.h */,
-				EFE1E87224BEFFAF005AE241 /* SwipeTableViewCell.swift */,
 			);
 			path = SwipeCell;
 			sourceTree = "<group>";
@@ -641,7 +629,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = MessageKit;
 				TargetAttributes = {
 					88916B211CF0DF2F00469F91 = {
@@ -654,7 +642,7 @@
 				};
 			};
 			buildConfigurationList = 88916B1C1CF0DF2F00469F91 /* Build configuration list for PBXProject "MessageKit" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -714,7 +702,6 @@
 			files = (
 				382C794221705D2000F4FAF5 /* HorizontalEdgeInsets.swift in Sources */,
 				B7A03F3C1F866946006AEF79 /* LocationMessageCell.swift in Sources */,
-				EFE1E87324BEFFAF005AE241 /* SwipeTableViewCellDelegate.swift in Sources */,
 				1FF377AA20087D78004FD648 /* MessagesViewController+Menu.swift in Sources */,
 				B7A03F5B1F8669CA006AEF79 /* MessageType.swift in Sources */,
 				B7A03F601F8669CA006AEF79 /* MessagesDisplayDelegate.swift in Sources */,
@@ -753,7 +740,6 @@
 				4C508649221C0BBA0043943C /* AccessoryPosition.swift in Sources */,
 				EFE1E87D24BEFFAF005AE241 /* SwipeFeedback.swift in Sources */,
 				B7A03F5E1F8669CA006AEF79 /* MessagesLayoutDelegate.swift in Sources */,
-				EFE1E88024BEFFAF005AE241 /* SwipeTableViewCell+Display.swift in Sources */,
 				B7A03F261F866895006AEF79 /* MessageKitDateFormatter.swift in Sources */,
 				B7A03F6D1F8669EB006AEF79 /* Bundle+Extensions.swift in Sources */,
 				5073C1192175BE960040EAD5 /* AudioMessageCell.swift in Sources */,
@@ -780,7 +766,6 @@
 				B7A03F4D1F86694F006AEF79 /* MessagesCollectionView.swift in Sources */,
 				EFE1E87424BEFFAF005AE241 /* SwipeAnimator.swift in Sources */,
 				0EF0888C206F7E83007F2F58 /* CellSizeCalculator.swift in Sources */,
-				EFE1E88924BEFFAF005AE241 /* SwipeTableViewCell.swift in Sources */,
 				EFE1E88524BEFFAF005AE241 /* SwipeExpansionStyle.swift in Sources */,
 				5073C1152175BE750040EAD5 /* AudioItem.swift in Sources */,
 				1FE783A4206629A5007FA024 /* MediaMessageSizeCalculator.swift in Sources */,
@@ -790,7 +775,6 @@
 				1FE783A6206629C2007FA024 /* LocationMessageSizeCalculator.swift in Sources */,
 				B7A03F2D1F866895006AEF79 /* LabelAlignment.swift in Sources */,
 				EFE1E87724BEFFAF005AE241 /* SwipeAccessibilityCustomAction.swift in Sources */,
-				EFE1E88424BEFFAF005AE241 /* SwipeTableViewCell+Accessibility.swift in Sources */,
 				1F6C040C206A2891007BDE44 /* MessageContentCell.swift in Sources */,
 				B7A03F2C1F866895006AEF79 /* DetectorType.swift in Sources */,
 				B7A03F271F866895006AEF79 /* Avatar.swift in Sources */,
@@ -838,6 +822,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					x86_64,
+					arm64,
+				);
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -858,6 +847,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -867,8 +857,10 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -883,7 +875,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -899,6 +891,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					x86_64,
+					arm64,
+				);
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -919,6 +916,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -928,8 +926,10 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -938,7 +938,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -952,6 +952,8 @@
 		88916B371CF0DF2F00469F91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -965,19 +967,28 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.messagekit.MessageKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		88916B381CF0DF2F00469F91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -991,13 +1002,21 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.messagekit.MessageKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1009,7 +1028,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.MessageKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1023,10 +1047,16 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.MessageKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};

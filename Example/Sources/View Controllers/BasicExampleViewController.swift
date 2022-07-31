@@ -153,7 +153,7 @@ extension BasicExampleViewController: MessagesLayoutDelegate {
         return 16
     }
     
-    func messageReactionHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+    func messageReactionsViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 0
     }
 }

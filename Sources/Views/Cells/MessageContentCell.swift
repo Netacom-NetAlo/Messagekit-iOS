@@ -186,7 +186,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         case messageBottomLabel.frame.contains(touchLocation):
             delegate?.didTapMessageBottomLabel(in: self)
         case reactionsView.frame.contains(touchLocation):
-            delegate?.didTapReactions(in: self)
+            delegate?.didTapListUersReaction(in: self)
         case accessoryView.frame.contains(touchLocation):
             delegate?.didTapAccessoryView(in: self)
         default:
