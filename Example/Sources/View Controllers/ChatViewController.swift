@@ -186,10 +186,9 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
 // MARK: - MessageCellDelegate
 
 extension ChatViewController: MessageCellDelegate {
-    func didTapReactions(in cell: MessageCollectionViewCell) {
-        
+    func didTapListUersReaction(in cell: MessageCollectionViewCell) {
+        print("Reactions tapped")
     }
-    
     
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("Avatar tapped")

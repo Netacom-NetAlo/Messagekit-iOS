@@ -67,7 +67,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapReactions(in cell: MessageCollectionViewCell)
+    func didTapListUersReaction(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs in the cellTopLabel.
     ///
