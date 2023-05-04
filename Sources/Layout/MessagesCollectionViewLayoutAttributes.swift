@@ -56,6 +56,9 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
     
     public var reactionContainerSize: CGSize = .zero
     public var reactionContainerPadding: UIEdgeInsets = .zero
+
+    public var unreadContainerSize: CGSize = .zero
+    public var unreadContainerPadding: UIEdgeInsets = .zero
     
     // MARK: - Methods
 
@@ -82,6 +85,8 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
         copy.accessoryViewPosition = accessoryViewPosition
         copy.reactionContainerSize = reactionContainerSize
         copy.reactionContainerPadding = reactionContainerPadding
+        copy.unreadContainerSize = unreadContainerSize
+        copy.unreadContainerPadding = unreadContainerPadding
         return copy
         // swiftlint:enable force_cast
     }
@@ -109,6 +114,8 @@ open class MessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttribu
                 && attributes.accessoryViewPosition == accessoryViewPosition
                 && attributes.reactionContainerSize == reactionContainerSize
                 && attributes.reactionContainerPadding == reactionContainerPadding
+                && attributes.unreadContainerSize == unreadContainerSize
+                && attributes.unreadContainerPadding == unreadContainerPadding
         } else {
             return false
         }

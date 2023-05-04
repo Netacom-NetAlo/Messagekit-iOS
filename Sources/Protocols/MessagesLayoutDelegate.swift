@@ -122,6 +122,18 @@ public protocol MessagesLayoutDelegate: AnyObject {
     /// - Note:
     ///   The default value returned by this method is zero.
     func messageReactionsViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat
+
+    /// Specifies the height for the `MessageContentCell`'s bottom label.
+    ///
+    /// - Parameters:
+    ///   - message: The `MessageType` that will be displayed for this cell.
+    ///   - indexPath: The `IndexPath` of the cell.
+    ///   - messagesCollectionView: The `MessagesCollectionView` in which this cell will be displayed.
+    ///   - maxWidth: The `CGFloat` width of reaction view.
+    ///
+    /// - Note:
+    ///   The default value returned by this method is zero.
+    func messageUnreadViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat
     
     /// Custom cell size calculator for messages with MessageType.custom.
     ///
@@ -170,6 +182,10 @@ public extension MessagesLayoutDelegate {
     }
     
     func messageReactionsViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat {
+        return 0
+    }
+
+    func messageUnreadViewHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView, with maxWidth: CGFloat) -> CGFloat {
         return 0
     }
     

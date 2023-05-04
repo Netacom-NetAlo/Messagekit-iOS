@@ -36,6 +36,12 @@ open class MessageContentCell: MessageCollectionViewCell {
         return view
     }()
 
+    open var unreadView: UIView = {
+        let view = UIView()
+        view.layer.backgroundColor = UIColor.clear.cgColor
+        return view
+    }()
+
     /// The container used for styling and holding the message's content view.
     open var messageContainerView: MessageContainerView = {
         let containerView = MessageContainerView()
@@ -94,6 +100,7 @@ open class MessageContentCell: MessageCollectionViewCell {
 
     open func setupSubviews() {
         contentView.addSubview(accessoryView)
+        contentView.addSubview(unreadView)
         contentView.addSubview(cellTopLabel)
         contentView.addSubview(messageTopLabel)
         contentView.addSubview(messageBottomLabel)
@@ -121,6 +128,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         guard let attributes = layoutAttributes as? MessagesCollectionViewLayoutAttributes else { return }
         // Call this before other laying out other subviews
         layoutMessageContainerView(with: attributes)
+        layoutUnreadView(with: attributes)
         layoutReactionsView(with: attributes)
         layoutMessageBottomLabel(with: attributes)
         layoutCellBottomLabel(with: attributes)
@@ -152,6 +160,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         displayDelegate.configureAvatarView(avatarView, for: message, at: indexPath, in: messagesCollectionView)
         displayDelegate.configureAccessoryView(accessoryView, for: message, at: indexPath, in: messagesCollectionView)
         displayDelegate.configureReactionsView(reactionsView, for: message, at: indexPath, in: messagesCollectionView)
+        displayDelegate.configureUnreadView(unreadView, for: message, at: indexPath, in: messagesCollectionView)
 
         messageContainerView.backgroundColor = messageColor
         messageContainerView.style = messageStyle
@@ -341,7 +350,25 @@ open class MessageContentCell: MessageCollectionViewCell {
         
         reactionsView.frame = CGRect(origin: origin, size: attributes.reactionContainerSize)
     }
-    
+
+    /// Positions the message bubble's top label.
+    /// - attributes: The `MessagesCollectionViewLayoutAttributes` for the cell.
+    open func layoutUnreadView(with attributes: MessagesCollectionViewLayoutAttributes) {
+        var origin: CGPoint = .zero
+
+        origin.y = attributes.cellTopLabelSize.height +
+            attributes.messageTopLabelSize.height +
+            attributes.messageContainerPadding.top +
+            attributes.messageContainerSize.height +
+            attributes.messageContainerPadding.bottom +
+            attributes.reactionContainerPadding.top +
+            attributes.reactionContainerSize.height +
+            attributes.reactionContainerPadding.bottom +
+            attributes.messageBottomLabelSize.height +
+            attributes.unreadContainerPadding.top
+        unreadView.frame = CGRect(origin: origin, size: attributes.unreadContainerSize)
+    }
+
     /// Positions the message bubble's top label.
     /// - attributes: The `MessagesCollectionViewLayoutAttributes` for the cell.
     open func layoutMessageTopLabel(with attributes: MessagesCollectionViewLayoutAttributes) {
