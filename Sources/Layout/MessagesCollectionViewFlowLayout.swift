@@ -29,6 +29,16 @@ import AVFoundation
 /// framework provided `MessageCollectionViewCell` subclasses.
 open class MessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
+    private var contentSizeBeforeInsertingToTop: CGSize?
+
+    public var isInsertingCellsToTop: Bool = false {
+        didSet {
+            if isInsertingCellsToTop {
+                contentSizeBeforeInsertingToTop = collectionViewContentSize
+            }
+        }
+    }
+
     open override class var layoutAttributesClass: AnyClass {
         return MessagesCollectionViewLayoutAttributes.self
     }
@@ -152,6 +162,22 @@ open class MessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
     @objc
     private func handleOrientationChange(_ notification: Notification) {
         invalidateLayout()
+    }
+
+    open override func prepare() {
+        super.prepare()
+        if isInsertingCellsToTop == true {
+            if let collectionView = collectionView, let oldContentSize = contentSizeBeforeInsertingToTop {
+                UIView.animate(withDuration: 0, animations: {
+                    let newContentSize = self.collectionViewContentSize
+                    let contentOffsetY = collectionView.contentOffset.y + (newContentSize.height - oldContentSize.height)
+                    let newOffset = CGPoint(x: collectionView.contentOffset.x, y: contentOffsetY)
+                    collectionView.contentOffset = newOffset
+                })
+            }
+            contentSizeBeforeInsertingToTop = nil
+            isInsertingCellsToTop = false
+        }
     }
 
     // MARK: - Cell Sizing
